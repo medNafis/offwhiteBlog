@@ -64,6 +64,7 @@
     align-items: center;
     flex-direction: column;
     font-family: 'Helvetica Neue Bold', sans-serif;
+    margin-bottom: 60px; /* Adjust the value as needed */
   }
 
   /* Logo and blog name styles */
