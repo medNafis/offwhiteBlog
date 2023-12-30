@@ -32,4 +32,18 @@ export default {
     background-color: #FFFFFF; /* Or any other preferred background color */
     box-sizing: border-box;
   }
+  a.router-link-active, a.router-link-exact-active {
+    text-decoration: none; /* Removes underline for all router links */
+  }
+  /* Global CSS (e.g., in App.vue or a separate global CSS file) */
+  a, a:visited {
+    color: inherit; /* Inherits the color from the parent element */
+    text-decoration: none; /* Removes underline */
+  }
+
+  a:hover {
+    color: inherit; /* Optional: Set hover color if needed */
+    text-decoration: none; /* Optional: Set hover text-decoration if needed */
+  }
+
 </style>
