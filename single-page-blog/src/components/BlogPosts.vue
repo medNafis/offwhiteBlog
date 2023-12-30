@@ -18,10 +18,10 @@ export default {
   data () {
     return {
       posts: [
-        { id: 1, title: 'Title ', subtitle: 'Subtitle ', imageUrl: testimg1 },
-        { id: 2, title: 'Title ', subtitle: 'Subtitle ', imageUrl: testimg2 },
-        { id: 3, title: 'Title ', subtitle: 'Subtitle ', imageUrl: testimg3 },
-        { id: 4, title: 'Title ', subtitle: 'Subtitle ', imageUrl: testimg4 }]
+        { id: 1, title: 'Title 1', subtitle: 'Subtitle ', imageUrl: testimg1 },
+        { id: 2, title: 'Title 2', subtitle: 'Subtitle ', imageUrl: testimg2 },
+        { id: 3, title: 'Title 3', subtitle: 'Subtitle ', imageUrl: testimg3 },
+        { id: 4, title: 'Title 4', subtitle: 'Subtitle ', imageUrl: testimg4 }]
     }
   }
 
@@ -56,18 +56,23 @@ export default {
     }
 
     .post-title {
-        margin-top: 10px;
-        font-size: 1.2em;
+        font-family: 'HelveticaNeue-Medium', sans-serif; 
+        margin-top: 20px;
+        margin-bottom: 0; /* Reduce the bottom margin */
+        font-size: 1.5em;
         text-align: center;
+        color: #000000;
     }
 
     .post-subtitle {
+        font-family: 'HelveticaNeue-Regular', sans-serif; 
         font-size: 1em;
         color: #000000;
         text-align: center;
+        margin-top: 10px; /* Reduce the top margin */
     }
 
-    @mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
+    @mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.5s) {
     box-shadow: inset 0 0 0 $width $color;
     transition: box-shadow $duration $duration/3; // Apply transition to box-shadow only
     position: relative;
@@ -115,7 +120,7 @@ export default {
     }
 
     .draw-border {
-        @include btn-border-drawing(#FFFFFF, #000000, 4px, bottom, right);
+        @include btn-border-drawing(#FFFFFF, #000000, 1px, top, left);
     }
 
     @media (max-width: 768px) {

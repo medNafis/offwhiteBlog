@@ -62,7 +62,7 @@ export default {
         display: flex;
         align-items: center;
         flex-direction: column;
-        font-family: 'Helvetica Neue Bold', sans-serif;
+        font-family: 'HelveticaNeue-Bold', sans-serif;
         margin-bottom: 60px; /* Adjust the value as needed */
     }
 
@@ -106,6 +106,7 @@ export default {
 
     .logoDef {
         font-style: italic;
+        font-family: 'Helvetica Neue Bold', sans-serif; /* Replace with your font name */
     }
 
     .blog-name {
@@ -115,6 +116,7 @@ export default {
 
     .blog-name .tm {
         font-size: 0.6em; /* Smaller font size for the trademark symbol */
+        font-family: 'Helvetica Neue Bold', sans-serif; /* Replace with your font name */
     }
     .header-link {
         text-decoration: none;
