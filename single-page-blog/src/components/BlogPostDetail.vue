@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  props: ['id'], // Receive the 'id' prop
   data () {
     return {
       post: {} // Post data will be fetched based on the post ID
