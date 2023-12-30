@@ -22,4 +22,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-# src/assets/
+src/assets/
+
+.eslintrc.json

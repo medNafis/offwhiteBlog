@@ -1,12 +1,12 @@
 <template>
     <header class="app-header">
         <nav class="nav-links" >
-            <router-link to="/about" class="header-link nav-item" :class="{ 'flipped': flippedLinks.about }" 
+            <router-link to="/about" class="header-link nav-item" :class="{ 'flipped': flippedLinks.about }"
               @mouseover="flipLink('about')" >About</router-link>
-            <a href="https://twitter.com/YourTwitterHandle" class="header-link nav-item" target="_blank" rel="noopener noreferrer" :class="{ 'flipped': flippedLinks.twitter }" 
+            <a href="https://twitter.com/YourTwitterHandle" class="header-link nav-item" target="_blank" rel="noopener noreferrer" :class="{ 'flipped': flippedLinks.twitter }"
               @mouseover="flipLink('twitter')" >Twitter</a>
         </nav>
-        
+
         <div class="logo" >
             <div class="logo-grid">
                 <div class="logo-item logoText">
@@ -24,26 +24,25 @@
         </div>
     </header>
 </template>
-  
-  
+
 <script>
-    export default {
-        data() {
-            return {
-                flippedLinks: {
-                    about: false,
-                    twitter: false,
-                },
-            };
-        },
-        methods: {
-            flipLink(link) {
-                if (!this.flippedLinks[link]) {
-                    this.flippedLinks[link] = true;
-                }
-            }
-        }    
+export default {
+  data () {
+    return {
+      flippedLinks: {
+        about: false,
+        twitter: false
+      }
     }
+  },
+  methods: {
+    flipLink (link) {
+      if (!this.flippedLinks[link]) {
+        this.flippedLinks[link] = true
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -56,16 +55,16 @@
     --spacing-xl: 4rem;    /* 64px */
     }
   /* Header container styles */
-  .app-header {
-    background-color: white; /* Adjust to your preferred background color */
-    color: black;
-    padding: var(--spacing-md);  /* Added horizontal padding */
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Helvetica Neue Bold', sans-serif;
-    margin-bottom: 60px; /* Adjust the value as needed */
-  }
+    .app-header {
+        background-color: white; /* Adjust to your preferred background color */
+        color: black;
+        padding: var(--spacing-md);  /* Added horizontal padding */
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Helvetica Neue Bold', sans-serif;
+        margin-bottom: 60px; /* Adjust the value as needed */
+    }
 
   /* Logo and blog name styles */
     .logo,
@@ -73,7 +72,6 @@
         padding: var(--spacing-lg); /* Spacing around logo and blog name */
     }
 
-  
     .nav-links {
         display: flex;
         justify-content: flex-end;
@@ -123,10 +121,10 @@
         color: #000; /* Replace with your preferred color */
         --b: 0.1em;   /* the thickness of the line */
         --c: #000; /* the color */
-        
+
         color: #0000;
         padding-block: var(--b);
-        background: 
+        background:
             linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
             linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
         -webkit-background-clip: text,padding-box;
@@ -140,10 +138,8 @@
         --_s: .4s;
     }
 
-    
     .header-link.flipped {
         transform: rotateX(0deg); /* Apply upside down transformation */
     }
 
 </style>
-  
