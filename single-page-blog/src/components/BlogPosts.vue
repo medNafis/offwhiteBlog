@@ -1,9 +1,11 @@
 <template>
     <div class="blog-posts">
         <div class="post draw-border" v-for="post in posts" :key="post.id">
-            <img :src="post.imageUrl" :alt="post.title" class="post_image"/>
-            <h2 class="post-title">{{ post.title }}</h2>
-            <p class="post-subtitle">{{ post.subtitle }}</p>
+            <router-link :to="{ name: 'BlogPostDetail', params: { id: post.id } }" class="post-link">
+                <img :src="post.imageUrl" :alt="post.title" class="post_image"/>
+                <h2 class="post-title">{{ post.title }}</h2>
+                <p class="post-subtitle">{{ post.subtitle }}</p>
+            </router-link>
         </div>
     </div>
 </template>
@@ -49,10 +51,10 @@ export default {
     }
 
     .post_image {
-        max-width: 100%; /* Ensure image does not exceed container width */
-        max-height: 50%; /* Adjust max height as per design requirement */
-        object-fit: contain; /* Ensures the image is scaled properly within its container */
-        margin-bottom: 10px; /* Spacing between image and text */
+        width: 100%; /* Full width of the container */
+        height: 200px; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensures the image is scaled properly within its container */
+        border-radius: 5px; /* Optional: for rounded corners */
     }
 
     .post-title {
@@ -70,6 +72,11 @@ export default {
         color: #000000;
         text-align: center;
         margin-top: 10px; /* Reduce the top margin */
+    }
+    .post-link {
+        text-decoration: none; /* Removes underline from links */
+        color: inherit; /* Keeps text color consistent */
+        display: block; /* Ensures the link takes up the full container space */
     }
 
     @mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.5s) {
