@@ -56,7 +56,7 @@ export default {
     }
 
     .post-title {
-        font-family: 'HelveticaNeue-Medium', sans-serif; 
+        font-family: 'HelveticaNeue-Medium', sans-serif;
         margin-top: 20px;
         margin-bottom: 0; /* Reduce the bottom margin */
         font-size: 1.5em;
@@ -65,7 +65,7 @@ export default {
     }
 
     .post-subtitle {
-        font-family: 'HelveticaNeue-Regular', sans-serif; 
+        font-family: 'HelveticaNeue-Regular', sans-serif;
         font-size: 1em;
         color: #000000;
         text-align: center;
