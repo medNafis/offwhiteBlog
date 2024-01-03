@@ -1,10 +1,10 @@
 <template>
     <div class="blog-post-detail" v-if="post">
     <h1 class="post-title">{{ post.title }}</h1>
-    <div class="post-meta">
+    <!-- <div class="post-meta">
             <span class="post-date">{{ formatDate(post.date) }}</span>
             <span class="post-author">{{ post.author }}</span>
-    </div>
+    </div> -->
     <div class="post-content" v-html="post.content"></div>
         <!-- Add more sections as needed -->
     </div>
@@ -15,22 +15,22 @@
 </template>
 
 <script>
+import ApiService from '@/services/ApiService'
+
 export default {
-  props: ['id'], // Receive the 'id' prop
   data () {
     return {
-      post: null // Placeholder for fetched post data
+      post: null
     }
   },
-  // Lifecycle hook to fetch post data
-  mounted () {
-    this.fetchPost() // Fetch the post data using the post ID (from route params or state)},
-  },
-  methods: {
-    fetchPost () {
-      // const postId = this.$route.params.id
-      // Fetch the post data using postId. This could be an API call or local data retrieval.
-      // For example: axios.get(`/api/posts/${postId}`).then(response => { this.post = response.data; });    }
+  async created () {
+    try {
+      const postId = this.$route.params.id // Access the ID from the route parameter
+      console.log('Fetching post with ID:', postId) // Log the ID
+      const response = await ApiService.getPostById(postId)
+      this.post = response.data
+    } catch (error) {
+      console.error('Error fetching post:', error)
     }
   }
 }

@@ -7,9 +7,16 @@ const posts = [
   // ... other posts
 ];
 
+const blogPosts = [
+    { id: 1, title: 'Title 1', subtitle: 'Subtitle '},
+    { id: 2, title: 'Title 2', subtitle: 'Subtitle '},
+    { id: 3, title: 'Title 3', subtitle: 'Subtitle '},
+    { id: 4, title: 'Title 4', subtitle: 'Subtitle '}
+];
+
 // Get all posts
 router.get('/', (req, res) => {
-  res.json(posts);
+  res.json(blogPosts);
 });
 
 // Get a single post by ID

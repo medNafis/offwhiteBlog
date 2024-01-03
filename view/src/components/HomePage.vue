@@ -1,18 +1,13 @@
 <template>
     <div class="home">
-      <AppHeader />
-      <BlogPosts />
+      <router-view />
     </div>
 </template>
 
 <script>
-import AppHeader from '../components/AppHeader.vue'
-import BlogPosts from '../components/BlogPosts.vue'
 
 export default {
   components: {
-    AppHeader,
-    BlogPosts
   }
 }
 </script>

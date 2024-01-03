@@ -1,32 +1,33 @@
 <template>
     <div class="blog-posts">
-        <div class="post draw-border" v-for="post in posts" :key="post.id">
-            <router-link :to="{ name: 'BlogPostDetail', params: { id: post.id } }" class="post-link">
-                <img :src="post.imageUrl" :alt="post.title" class="post_image"/>
-                <h2 class="post-title">{{ post.title }}</h2>
-                <p class="post-subtitle">{{ post.subtitle }}</p>
+        <div class="post draw-border" v-for="blogPost in blogPosts" :key="blogPost.id">
+            <router-link :to="{ name: 'BlogPostDetail', params: { id: blogPost.id } }" class="post-link">
+                <img :src="blogPost.imageUrl" :alt="blogPost.title" class="post_image"/>
+                <h2 class="post-title">{{ blogPost.title }}</h2>
+                <p class="post-subtitle">{{ blogPost.subtitle }}</p>
             </router-link>
         </div>
     </div>
 </template>
 
 <script>
-import testimg1 from '@/assets/testimg1.jpg'
-import testimg2 from '@/assets/testimg2.jpg'
-import testimg3 from '@/assets/testimg3.jpg'
-import testimg4 from '@/assets/testimg4.jpg'
+import ApiService from '@/services/ApiService'
 
 export default {
   data () {
     return {
-      posts: [
-        { id: 1, title: 'Title 1', subtitle: 'Subtitle ', imageUrl: testimg1 },
-        { id: 2, title: 'Title 2', subtitle: 'Subtitle ', imageUrl: testimg2 },
-        { id: 3, title: 'Title 3', subtitle: 'Subtitle ', imageUrl: testimg3 },
-        { id: 4, title: 'Title 4', subtitle: 'Subtitle ', imageUrl: testimg4 }]
+      blogPosts: []
+    }
+  },
+  async created () {
+    try {
+      const response = await ApiService.getPosts()
+      this.blogPosts = response.data
+      console.log(this.blogPosts) // Check what's being assigned to blogPosts
+    } catch (error) {
+      console.error('Error fetching posts:', error)
     }
   }
-
 }
 
 </script>

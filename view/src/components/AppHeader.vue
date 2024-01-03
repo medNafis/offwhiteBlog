@@ -1,8 +1,9 @@
 <template>
     <header class="app-header">
         <nav class="nav-links" >
-            <router-link to="/about" class="header-link nav-item" :class="{ 'flipped': flippedLinks.about }"
-              @mouseover="flipLink('about')" >About</router-link>
+            <a class="header-link nav-item" :class="{ 'flipped': flippedLinks.about }" @mouseover="flipLink('about')">About</a>
+            <!-- <router-link to="/about" class="header-link nav-item" :class="{ 'flipped': flippedLinks.about }"
+              @mouseover="flipLink('about')" >About</router-link> -->
             <a href="https://twitter.com/YourTwitterHandle" class="header-link nav-item" target="_blank" rel="noopener noreferrer" :class="{ 'flipped': flippedLinks.twitter }"
               @mouseover="flipLink('twitter')" >Twitter</a>
         </nav>
