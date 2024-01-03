@@ -11,6 +11,8 @@ const port = 3000;
 
 server.use('/posts', postsRouter);
 
+server.use(express.static('public')); // Serve static files from the 'public' directory
+
 server.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
