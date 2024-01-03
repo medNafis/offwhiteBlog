@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Mock data
 const posts = [
-  { id: 1, title: 'Title 1', content: 'This is the first post' },
+  { id: 1, title: 'Title 1', imageUrl: 'http://localhost:3000/tstimg1.jpg', date: Date.now(), content: 'This is the first post' },
   { id: 2, title: 'Title 2', content: 'This is the second post' }
 ];
 
