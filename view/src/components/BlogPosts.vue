@@ -3,8 +3,10 @@
         <div class="post draw-border" v-for="blogPost in blogPosts" :key="blogPost.id">
             <router-link :to="{ name: 'BlogPostDetail', params: { id: blogPost.id } }" class="post-link">
                 <img :src="blogPost.imageUrl" :alt="blogPost.title" class="post_image"/>
-                <h2 class="post-title">{{ blogPost.title }}</h2>
-                <p class="post-subtitle">{{ blogPost.subtitle }}</p>
+                <div class="post-text">
+                    <h2 class="post-title">{{ blogPost.title }}</h2>
+                    <p class="post-subtitle">{{ blogPost.subtitle }}</p>
+                </div>
             </router-link>
         </div>
     </div>
@@ -58,6 +60,10 @@ export default {
         border-radius: 5px; /* Optional: for rounded corners */
     }
 
+    .post-text {
+        text-align: center;
+        overflow: hidden;
+    }
     .post-title {
         font-family: 'HelveticaNeue-Medium', sans-serif;
         margin-top: 20px;
